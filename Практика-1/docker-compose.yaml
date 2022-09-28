@@ -1,0 +1,19 @@
+version: "3"
+services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./server/init.sql:/docker-entrypoint-initdb.d/init.sql"
+  server:
+    container_name: pr1_server
+    build: ./server
+    volumes:
+      - ./server:/var/www/html
+    ports:
+      - "8080:80"
+volumes:
+ db_volume:
