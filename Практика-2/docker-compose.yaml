@@ -1,0 +1,24 @@
+version: "3"
+services:
+  drawer:
+    container_name: drawer
+    build: ./tseBaza
+    volumes:
+      - ./drawer:/var/www/html
+    ports:
+      - "2281:80"
+  sort:
+    container_name: sorter
+    build: ./tseBaza
+    volumes:
+      - ./sorter:/var/www/html
+    ports:
+      - "2282:80"
+  console:
+    container_name: console
+    build: ./tseBaza
+    volumes:
+      - ./console:/var/www/html
+    ports:
+      - "2283:80"
+ 
