@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  site:
+    build: ./server
+    volumes:
+      - ./server:/var/www/html
+    ports:
+      - "8082:80"
+  api:
+    build: ./
+    ports:
+      - "1000:80"
+  phpmyadmin:
+    container_name: phpmyadmin1
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    environment:
+        PMA_HOST: db
+    ports:
+        - 8000:80
+    depends_on:
+        - db
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-authentication-plugin=mysql_native_password']
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./server/init.sql:/docker-entrypoint-initdb.d/init.sql"
