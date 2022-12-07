@@ -1,0 +1,115 @@
+body {
+	font-family: Arial;
+	padding: 20px;
+	background: #f1f1f1;
+  }
+  
+  /* Header/Blog Title */
+
+  
+  .navtop {
+	background-color: #2f3947;
+	height: 60px;
+	width: 100%;
+	border: 0;
+}
+.navtop div {
+	display: flex;
+	margin: 0 auto;
+	width: 1000px;
+	height: 100%;
+}
+.navtop div h1, .navtop div a {
+	display: inline-flex;
+	align-items: center;
+}
+.navtop div h1 {
+	flex: 1;
+	font-size: 24px;
+	padding: 0;
+	margin: 0;
+	color: #eaebed;
+	font-weight: normal;
+}
+.navtop div a {
+	padding: 0 20px;
+	text-decoration: none;
+	color: #c1c4c8;
+	font-weight: bold;
+}
+.navtop div a i {
+	padding: 2px 8px 0 0;
+}
+
+  
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn {  
+	display: flex; 
+	float: left;
+	width: 70%;
+	flex-direction: column-reverse;
+  }
+  
+  /* Right column */
+  .rightcolumn {
+	float: left;
+	width: 25%;
+	padding-left: 20px;
+  }
+  
+  /* Fake image */
+  .fakeimg {
+	background-color: #aaa;
+	width: 70%;
+	padding: 20px;
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+	 background-color: white;
+	 padding: 20px;
+	 margin-top: 20px;
+	 border: 2px blue solid;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
+  /* Footer */
+  .footer {
+	padding: 20px;
+	text-align: center;
+	background: #ddd;
+	margin-top: 20px;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+
+  .card form input[type="info"] {
+    width: 80%;
+    padding: 15px;
+   	margin-top: 20px;
+    border: 2px solid grey;
+    cursor: pointer;
+    font-weight: bold;
+}
+.card form input[type="submit"] {
+    width: 89%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #3274d6;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+.card form input[type="submit"]:hover {
+  background-color: #2868c7;
+    transition: background-color 0.2s;
+}
